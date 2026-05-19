@@ -1,0 +1,357 @@
+/* =========================
+FILE : home.css
+VERSI TERBARU
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  background:#f1f5f9;
+}
+
+.container{
+  display:flex;
+  min-height:100vh;
+}
+
+/* =========================
+SIDEBAR
+========================= */
+
+.sidebar{
+  width:230px;
+  background:#0ea5e9;
+  padding:20px;
+  color:white;
+}
+
+.logo{
+  margin-bottom:30px;
+}
+
+.dashboard-btn{
+  width:100%;
+  border:none;
+  padding:15px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.2);
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  cursor:pointer;
+  margin-bottom:20px;
+  transition:0.3s;
+}
+
+.dashboard-btn:hover{
+  background:rgba(255,255,255,0.3);
+}
+
+.dashboard-btn img{
+  width:25px;
+}
+
+.navbar-menu{
+  display:none;
+  flex-wrap:wrap;
+  gap:15px;
+}
+
+.nav-icon{
+  width:70px;
+  height:70px;
+  background:rgba(255,255,255,0.15);
+  border-radius:15px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.nav-icon:hover{
+  transform:scale(1.07);
+  background:rgba(255,255,255,0.3);
+}
+
+.nav-icon img{
+  width:38px;
+}
+
+/* =========================
+MAIN
+========================= */
+
+.main-content{
+  flex:1;
+  padding:20px;
+}
+
+/* =========================
+TOPBAR
+========================= */
+
+.top-navbar{
+  background:white;
+  border:2px solid #0ea5e9;
+  padding:10px 20px;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.notif-box{
+  position:relative;
+  font-size:20px;
+}
+
+.notif-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:red;
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:11px;
+}
+
+.user-profile{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.user-profile img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+}
+
+/* =========================
+HEADER
+========================= */
+
+.header{
+  background:#dff6ff;
+  border-radius:15px;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.robot{
+  width:150px;
+}
+
+/* =========================
+GRID
+========================= */
+
+.card-grid,
+.speed-grid{
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:20px;
+  margin-bottom:20px;
+}
+
+/* =========================
+CARD
+========================= */
+
+.card{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:15px;
+  border:1px solid #ddd;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card i{
+  font-size:28px;
+  color:#2563eb;
+}
+
+/* =========================
+SPEED
+========================= */
+
+.speed-card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  text-align:center;
+  border:1px solid #ddd;
+  transition:0.3s;
+}
+
+.speed-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.speed-card i{
+  font-size:35px;
+  color:#2563eb;
+  margin-bottom:15px;
+}
+
+.speed-card h1{
+  font-size:35px;
+}
+
+/* =========================
+CHART
+========================= */
+
+.chart-section{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.chart-box{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  border:1px solid #ddd;
+}
+
+.chart-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.chart-header select{
+  padding:5px 10px;
+  border-radius:8px;
+}
+
+#networkChart{
+  height:300px !important;
+}
+
+.tips-box{
+  background:white;
+  border-radius:15px;
+  padding:20px;
+  border:1px solid #ddd;
+}
+
+.tips-box ul{
+  margin-top:15px;
+}
+
+.tips-box li{
+  margin-bottom:15px;
+  line-height:1.7;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer-box{
+  background:#0ea5e9;
+  border-radius:15px;
+  padding:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  color:white;
+}
+
+.footer-left{
+  max-width:450px;
+}
+
+.footer-logo{
+  width:120px;
+  margin-bottom:15px;
+}
+
+.footer-left p{
+  line-height:1.8;
+}
+
+.footer-right{
+  text-align:right;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .chart-section{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .container{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+  }
+
+  .header{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .robot{
+    width:100px;
+    margin-top:20px;
+  }
+
+  .footer-box{
+    flex-direction:column;
+    text-align:center;
+    gap:20px;
+  }
+
+  .footer-right{
+    text-align:center;
+  }
+
+}

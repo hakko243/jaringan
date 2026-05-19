@@ -1,0 +1,490 @@
+<!-- =========================================
+FILE : speed.html
+VERSI TERBARU FULL RESPONSIVE
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Cek Speed - Jaringan Lancar</title>
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="speed.css"
+  >
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- =========================
+  SIDEBAR
+  ========================= -->
+  <aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <h2>Jaringan Lancar</h2>
+
+    </div>
+
+    <!-- DASHBOARD -->
+    <button
+      class="dashboard-btn"
+      onclick="toggleMenu()"
+    >
+
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png"
+      >
+
+      <span>Dashboard</span>
+
+    </button>
+
+    <!-- NAVBAR -->
+    <div
+      class="navbar-menu"
+      id="navbarMenu"
+    >
+
+      <!-- HOME -->
+      <a
+        href="index.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.39.14-removebg-preview 1.png"
+        >
+
+      </a>
+      <!-- SPEED -->
+      <a
+        href="speed.html"
+        class="nav-icon "
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.42.08-removebg-preview 1 (1).png"
+        >
+
+      </a>
+      <!-- HISTORY -->
+      <a
+        href="history.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.45.08-removebg-preview 1.png"
+        >
+
+      </a>
+
+      <!-- SERVER -->
+      <a
+        href="server.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.34.48-removebg-preview 1.png"
+        >
+
+      </a>
+
+    </div>
+
+  </aside>
+
+  <!-- =========================
+  MAIN CONTENT
+  ========================= -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="top-navbar">
+
+      <div></div>
+
+      <div class="top-right">
+
+        <!-- NOTIF -->
+        <div class="notif-box">
+
+          <i class="fa-solid fa-bell"></i>
+
+          <span class="notif-count">
+            1
+          </span>
+
+        </div>
+
+        <!-- USER -->
+        <div class="user-profile">
+
+          <img
+            src="https://i.pravatar.cc/100"
+          >
+
+          <div>
+
+            <h4>User</h4>
+
+            <p>(Acit)</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <div class="speed-header">
+
+      <div>
+
+        <h2>
+
+          <i class="fa-solid fa-gauge-high"></i>
+
+          Cek Speed
+
+        </h2>
+
+        <p>
+          Uji kecepatan internet Anda secara real-time.
+        </p>
+
+      </div>
+
+      <button
+        class="start-btn"
+        onclick="startSpeedTest()"
+      >
+
+        <i class="fa-solid fa-rotate"></i>
+
+        Mulai Uji Speed
+
+      </button>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="speed-layout">
+
+      <!-- SPEED METER -->
+      <div class="meter-box">
+
+        <div class="meter-circle">
+
+          <div class="meter-inner">
+
+            <h1 id="downloadSpeed">
+              0
+            </h1>
+
+            <p>Mbps</p>
+
+          </div>
+
+        </div>
+
+        <div class="testing-text">
+
+          <i class="fa-solid fa-circle-notch"></i>
+
+          Testing Download...
+
+        </div>
+
+      </div>
+
+      <!-- RESULT -->
+      <div class="result-grid">
+
+        <!-- PING -->
+        <div class="result-card">
+
+          <i class="fa-solid fa-tower-broadcast"></i>
+
+          <div>
+
+            <p>PING</p>
+
+            <h2>
+
+              <span id="ping">
+                0
+              </span>
+
+              <small>ms</small>
+
+            </h2>
+
+          </div>
+
+        </div>
+
+        <!-- DOWNLOAD -->
+        <div class="result-card">
+
+          <i class="fa-solid fa-download"></i>
+
+          <div>
+
+            <p>DOWNLOAD</p>
+
+            <h2>
+
+              <span id="download">
+                0
+              </span>
+
+              <small>Mbps</small>
+
+            </h2>
+
+          </div>
+
+        </div>
+
+        <!-- UPLOAD -->
+        <div class="result-card">
+
+          <i class="fa-solid fa-upload"></i>
+
+          <div>
+
+            <p>UPLOAD</p>
+
+            <h2>
+
+              <span id="upload">
+                0
+              </span>
+
+              <small>Mbps</small>
+
+            </h2>
+
+          </div>
+
+        </div>
+
+        <!-- GRAFIK -->
+        <div class="chart-box">
+
+          <div class="chart-header">
+
+            <h3>Grafik Performa</h3>
+
+            <span>Real-time</span>
+
+          </div>
+
+          <canvas id="speedChart"></canvas>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =========================
+    BOTTOM INFO
+    ========================= -->
+    <div class="bottom-info-grid">
+
+      <!-- INFORMASI -->
+      <div class="info-card">
+
+        <h3>
+
+          <i class="fa-solid fa-wifi"></i>
+
+          Informasi Koneksi
+
+        </h3>
+
+        <div class="info-item">
+
+          <div class="info-icon">
+
+            <i class="fa-solid fa-wifi"></i>
+
+          </div>
+
+          <div>
+
+            <p>Status Jaringan</p>
+
+            <strong id="networkStatus">
+              Online
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <div class="info-icon">
+
+            <i class="fa-solid fa-desktop"></i>
+
+          </div>
+
+          <div>
+
+            <p>Perangkat Terhubung</p>
+
+            <strong id="deviceConnected">
+              0 Perangkat
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- DETAIL -->
+      <div class="info-card">
+
+        <h3>
+
+          <i class="fa-solid fa-file-lines"></i>
+
+          Detail Pengujian
+
+        </h3>
+
+        <div class="info-item">
+
+          <div class="info-icon">
+
+            <i class="fa-solid fa-server"></i>
+
+          </div>
+
+          <div>
+
+            <p>Server</p>
+
+            <strong>
+              server wifi lokal
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="info-item">
+
+          <div class="info-icon">
+
+            <i class="fa-solid fa-clock"></i>
+
+          </div>
+
+          <div>
+
+            <p>Waktu Pengujian</p>
+
+            <strong id="testTime">
+              -
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TIPS -->
+      <div class="info-card">
+
+        <h3>
+
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+          Tips Optimasi Internet
+
+        </h3>
+
+        <ul class="tips-list">
+
+          <li>
+
+            <i class="fa-solid fa-network-wired"></i>
+
+            Gunakan koneksi kabel untuk hasil terbaik
+
+          </li>
+
+          <li>
+
+            <i class="fa-solid fa-server"></i>
+
+            Tutup aplikasi yang tidak digunakan
+
+          </li>
+
+          <li>
+
+            <i class="fa-solid fa-gamepad"></i>
+
+            Hindari streaming saat bermain game
+
+          </li>
+
+          <li>
+
+            <i class="fa-solid fa-rotate"></i>
+
+            Restart router secara berkala
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<!-- CHART -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- JS -->
+<script src="speed.js"></script>
+
+</body>
+</html>

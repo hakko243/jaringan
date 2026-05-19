@@ -1,0 +1,423 @@
+<!-- =========================
+FILE : index.html
+VERSI TERBARU
+========================= -->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Jaringan Lancar</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="home.css">
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- CHART JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- =========================
+  SIDEBAR
+  ========================= -->
+  <aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <h2>Jaringan Lancar</h2>
+
+    </div>
+
+    <!-- DASHBOARD -->
+    <button
+      class="dashboard-btn"
+      onclick="toggleMenu()"
+    >
+
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png"
+      >
+
+      <span>Dashboard</span>
+
+    </button>
+
+    <!-- MENU -->
+    <div
+      class="navbar-menu"
+      id="navbarMenu"
+    >
+
+      <!-- HOME -->
+      <div class="nav-icon">
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.39.14-removebg-preview 1.png"
+        >
+
+      </div>
+
+      <!-- SPEED -->
+      <a href="speed.html" class="nav-icon">
+
+    <img
+      src="ChatGPT_Image_17_Mei_2026__20.42.08-removebg-preview 1 (1).png"
+    >
+
+  </a>
+
+      <!-- HISTORY -->
+      <a href="history.html" class="nav-icon">
+
+    <img
+      src="ChatGPT_Image_17_Mei_2026__20.45.08-removebg-preview 1.png"
+    >
+
+  </a>
+
+      <!-- SERVER -->
+       <a href="server.html" class="nav-icon">
+
+    <img
+      src="ChatGPT_Image_17_Mei_2026__20.34.48-removebg-preview 1.png"
+    >
+
+  </a>
+
+    </div>
+
+  </aside>
+
+  <!-- =========================
+  MAIN CONTENT
+  ========================= -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="top-navbar">
+
+      <div></div>
+
+      <div class="top-right">
+
+        <!-- NOTIF -->
+        <div class="notif-box">
+
+          <i class="fa-solid fa-bell"></i>
+
+          <span class="notif-count">
+            1
+          </span>
+
+        </div>
+
+        <!-- USER -->
+        <div class="user-profile">
+
+          <img
+            src="https://i.pravatar.cc/100"
+          >
+
+          <div>
+
+            <h4>User</h4>
+
+            <p>(Acit)</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <div class="header">
+
+      <!-- TEXT -->
+      <div class="header-text">
+
+        <h1>Selamat Datang</h1>
+
+        <p>
+          Uji performa internet Anda.
+          Pantau ping, download dan upload
+          secara realtime dengan hasil akurat.
+        </p>
+
+      </div>
+
+      <!-- ROBOT -->
+      <img
+        src="ChatGPT Image 17 Mei 2026, 20.59.04 1 (1).png"
+        class="robot"
+      >
+
+    </div>
+
+    <!-- =========================
+    CARD GRID
+    ========================= -->
+    <div class="card-grid">
+
+      <!-- STATUS -->
+      <div class="card">
+
+        <i class="fa-solid fa-wifi"></i>
+
+        <div>
+
+          <h4>Status Jaringan</h4>
+
+          <p id="networkStatus">
+            Checking...
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- SERVER -->
+      <div class="card">
+
+        <i class="fa-solid fa-server"></i>
+
+        <div>
+
+          <h4>Server Aktif</h4>
+
+          <p>
+            Wifi Local 
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- DEVICE -->
+      <div class="card">
+
+        <i class="fa-solid fa-desktop"></i>
+
+        <div>
+
+          <h4>Perangkat</h4>
+
+          <p>
+
+            <span id="deviceCount">
+              0
+            </span>
+
+            Device
+
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CLOCK -->
+      <div class="card">
+
+        <i class="fa-solid fa-clock"></i>
+
+        <div>
+
+          <h4>Waktu</h4>
+
+          <p id="clock">
+            00:00:00
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- =========================
+    SPEED TEST
+    ========================= -->
+    <div class="speed-grid">
+
+      <!-- PING -->
+      <div class="speed-card">
+
+        <i class="fa-solid fa-tower-broadcast"></i>
+
+        <h3>PING</h3>
+
+        <h1>
+
+          <span id="ping">
+            0
+          </span>
+
+          <small>ms</small>
+
+        </h1>
+
+      </div>
+
+      <!-- DOWNLOAD -->
+      <div class="speed-card">
+
+        <i class="fa-solid fa-download"></i>
+
+        <h3>Download</h3>
+
+        <h1>
+
+          <span id="download">
+            0
+          </span>
+
+          <small>Mbps</small>
+
+        </h1>
+
+      </div>
+
+      <!-- UPLOAD -->
+      <div class="speed-card">
+
+        <i class="fa-solid fa-upload"></i>
+
+        <h3>Upload</h3>
+
+        <h1>
+
+          <span id="upload">
+            0
+          </span>
+
+          <small>Mbps</small>
+
+        </h1>
+
+      </div>
+
+    </div>
+
+    <!-- =========================
+    CHART + TIPS
+    ========================= -->
+    <div class="chart-section">
+
+      <!-- CHART -->
+      <div class="chart-box">
+
+        <div class="chart-header">
+
+          <h3>Grafik Kinerja Jaringan</h3>
+
+          <select>
+            <option>REALTIME</option>
+          </select>
+
+        </div>
+
+        <canvas id="networkChart"></canvas>
+
+      </div>
+
+      <!-- TIPS -->
+      <div class="tips-box">
+
+        <h3>Tips Optimasi Internet</h3>
+
+        <ul>
+
+          <li>
+            Gunakan kabel LAN
+            untuk hasil lebih stabil
+          </li>
+
+          <li>
+            Tutup aplikasi
+            yang tidak digunakan
+          </li>
+
+          <li>
+            Restart router
+            secara berkala
+          </li>
+
+          <li>
+            Hindari download besar
+            saat bermain game
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- =========================
+    FOOTER
+    ========================= -->
+    <div class="footer-box">
+
+      <!-- LEFT -->
+      <div class="footer-left">
+
+        <img
+          src="f858ff98-5f01-4a46-8635-1c3c8039a0b5 1.png"
+          class="footer-logo"
+        >
+
+        <h2>JARINGAN LANCAR</h2>
+
+        <p>
+          Uji performa internet Anda
+          secara realtime dan akurat.
+          Pantau ping, download, upload,
+          dan status jaringan setiap saat.
+        </p>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="footer-right">
+
+        <h3>© 2026 Jaringan Lancar</h3>
+
+        <p>
+          Designed By Bili
+        </p>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<!-- JS -->
+<script src="home.js"></script>
+
+</body>
+</html>

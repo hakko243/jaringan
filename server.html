@@ -1,0 +1,435 @@
+<!-- =========================================
+FILE : server.html
+VERSI TERBARU
+========================================= -->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Server - Jaringan Lancar</title>
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="server.css"
+  >
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="logo">
+
+      <h2>Jaringan Lancar</h2>
+
+    </div>
+
+    <!-- DASHBOARD -->
+    <button
+      class="dashboard-btn"
+      onclick="toggleMenu()"
+    >
+
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png"
+      >
+
+      <span>Dashboard</span>
+
+    </button>
+
+    <!-- NAVBAR -->
+    <div
+      class="navbar-menu"
+      id="navbarMenu"
+    >
+
+      <!-- HOME -->
+      <a
+        href="index.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.39.14-removebg-preview 1.png"
+        >
+
+      </a>
+
+      <!-- SPEED -->
+      <a
+        href="speed.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.42.08-removebg-preview 1 (1).png"
+        >
+
+      </a>
+
+      <!-- HISTORY -->
+      <a
+        href="history.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.45.08-removebg-preview 1.png"
+        >
+
+      </a>
+
+      <!-- SERVER -->
+      <a
+        href="server.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.34.48-removebg-preview 1.png"
+        >
+
+      </a>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="top-navbar">
+
+      <div></div>
+
+      <div class="top-right">
+
+        <!-- NOTIF -->
+        <div class="notif-box">
+
+          <i class="fa-solid fa-bell"></i>
+
+          <span class="notif-count">
+            1
+          </span>
+
+        </div>
+
+        <!-- USER -->
+        <div class="user-profile">
+
+          <img
+            src="https://i.pravatar.cc/100"
+          >
+
+          <div>
+
+            <h4>User</h4>
+
+            <p>(Acit)</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <div class="server-header">
+
+      <div>
+
+        <h1>Server</h1>
+
+        <p>
+          Kelola dan pantau status
+          server yang terhubung.
+        </p>
+
+      </div>
+
+      <button class="add-server-btn">
+
+        <i class="fa-solid fa-plus"></i>
+
+        Tambah Server
+
+      </button>
+
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary-grid">
+
+      <!-- TOTAL -->
+      <div class="summary-card">
+
+        <div class="summary-icon blue">
+
+          <i class="fa-solid fa-server"></i>
+
+        </div>
+
+        <div>
+
+          <p>Total Server</p>
+
+          <h2>
+
+            <span id="totalServer">
+              1
+            </span>
+
+            <small>Server</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- ONLINE -->
+      <div class="summary-card">
+
+        <div class="summary-icon green">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+        </div>
+
+        <div>
+
+          <p>Server Online</p>
+
+          <h2>
+
+            <span id="onlineServer">
+              1
+            </span>
+
+            <small>Server</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- OFFLINE -->
+      <div class="summary-card">
+
+        <div class="summary-icon red">
+
+          <i class="fa-solid fa-xmark"></i>
+
+        </div>
+
+        <div>
+
+          <p>Server Offline</p>
+
+          <h2>
+
+            <span id="offlineServer">
+              0
+            </span>
+
+            <small>Server</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- UPTIME -->
+      <div class="summary-card">
+
+        <div class="summary-icon purple">
+
+          <i class="fa-solid fa-wave-square"></i>
+
+        </div>
+
+        <div>
+
+          <p>Uptime Rata-rata</p>
+
+          <h2 id="uptimeAverage">
+            99.99%
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-box">
+
+      <!-- HEADER -->
+      <div class="table-header">
+
+        <h2>Daftar Server</h2>
+
+        <div class="table-actions">
+
+          <input
+            type="text"
+            placeholder="Cari server..."
+          >
+
+          <select>
+
+            <option>
+              Semua Status
+            </option>
+
+            <option>
+              Online
+            </option>
+
+            <option>
+              Offline
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <!-- TABLE -->
+      <div class="table-responsive">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Nama Server</th>
+              <th>Lokasi</th>
+              <th>IP Address</th>
+              <th>Status</th>
+              <th>Uptime</th>
+              <th>Ping</th>
+              <th>Beban Server</th>
+              <th>Aksi</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="serverTable">
+
+            <tr>
+
+              <td>
+
+                <div class="server-name">
+
+                  <i class="fa-solid fa-server"></i>
+
+                  <span>
+                    Server Wifi Local 
+                  </span>
+
+                </div>
+
+              </td>
+
+              <td>
+                Indonesia
+              </td>
+
+              <td id="ipAddress">
+                192.168.1.1
+              </td>
+
+              <td>
+
+                <span class="status online">
+                  Online
+                </span>
+
+              </td>
+
+              <td>
+                99.99%
+              </td>
+
+              <td id="pingValue">
+                10 ms
+              </td>
+
+              <td>
+
+                <div class="progress-box">
+
+                  <div
+                    class="progress-bar"
+                    id="progressBar"
+                  ></div>
+
+                </div>
+
+                <span id="serverLoad">
+                  30%
+                </span>
+
+              </td>
+
+              <td>
+
+                <button class="menu-btn">
+
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                </button>
+
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="server.js"></script>
+
+</body>
+</html>

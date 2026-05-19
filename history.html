@@ -1,0 +1,376 @@
+<!-- =========================
+FILE : history.html
+VERSI TERBARU + TOGGLE NAVBAR
+========================= -->
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>History - Jaringan Lancar</title>
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="history.css"
+  >
+
+  <!-- FONT AWESOME -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- =========================
+  SIDEBAR
+  ========================= -->
+  <aside class="sidebar">
+
+    <!-- LOGO -->
+    <div class="logo">
+
+      <h2>Jaringan Lancar</h2>
+
+    </div>
+
+    <!-- DASHBOARD -->
+    <button
+      class="dashboard-btn"
+      id="dashboardToggle"
+    >
+
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/1828/1828765.png"
+      >
+
+      <span>Dashboard</span>
+
+    </button>
+
+    <!-- NAVBAR -->
+    <div
+      class="navbar-menu"
+      id="navbarMenu"
+    >
+
+      <!-- HOME -->
+      <a
+        href="index.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.39.14-removebg-preview 1.png"
+        >
+
+      </a>
+
+      <!-- SPEED -->
+      <a
+        href="speed.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.42.08-removebg-preview 1 (1).png"
+        >
+
+      </a>
+
+      <!-- HISTORY -->
+      <a
+        href="history.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.45.08-removebg-preview 1.png"
+        >
+
+      </a>
+
+      <!-- SERVER -->
+      <a
+        href="server.html"
+        class="nav-icon"
+      >
+
+        <img
+          src="ChatGPT_Image_17_Mei_2026__20.34.48-removebg-preview 1.png"
+        >
+
+      </a>
+
+    </div>
+
+  </aside>
+
+  <!-- =========================
+  MAIN CONTENT
+  ========================= -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="top-navbar">
+
+      <div></div>
+
+      <div class="top-right">
+
+        <!-- NOTIF -->
+        <div class="notif-box">
+
+          <i class="fa-solid fa-bell"></i>
+
+          <span class="notif-count">
+            1
+          </span>
+
+        </div>
+
+        <!-- USER -->
+        <div class="user-profile">
+
+          <img
+            src="https://i.pravatar.cc/100"
+          >
+
+          <div>
+
+            <h4>User</h4>
+
+            <p>(Acit)</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HEADER -->
+    <div class="history-header">
+
+      <div>
+
+        <h2>
+
+          <i class="fa-solid fa-clock-rotate-left"></i>
+
+          History
+
+        </h2>
+
+        <p>
+          Riwayat pemantauan dan
+          aktivitas jaringan Anda.
+        </p>
+
+      </div>
+
+      <div class="header-right">
+
+        <!-- DATE -->
+        <div class="date-box">
+
+          <i class="fa-solid fa-calendar"></i>
+
+          <span id="todayDate">
+            16 Mei 2025 - 23 Mei 2025
+          </span>
+
+        </div>
+
+        <!-- EXPORT -->
+        <button class="export-btn">
+
+          <i class="fa-solid fa-download"></i>
+
+          Export PDF
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary-grid">
+
+      <!-- TOTAL -->
+      <div class="summary-card">
+
+        <div class="summary-icon green">
+
+          <i class="fa-solid fa-wifi"></i>
+
+        </div>
+
+        <div>
+
+          <p>Total Pengujian</p>
+
+          <h2>
+
+            <span id="totalTest">
+              0
+            </span>
+
+            <small>kali</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- DOWNLOAD -->
+      <div class="summary-card">
+
+        <div class="summary-icon teal">
+
+          <i class="fa-solid fa-download"></i>
+
+        </div>
+
+        <div>
+
+          <p>Rata-rata Download</p>
+
+          <h2>
+
+            <span id="avgDownload">
+              0
+            </span>
+
+            <small>Mbps</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- UPLOAD -->
+      <div class="summary-card">
+
+        <div class="summary-icon purple">
+
+          <i class="fa-solid fa-upload"></i>
+
+        </div>
+
+        <div>
+
+          <p>Rata-rata Upload</p>
+
+          <h2>
+
+            <span id="avgUpload">
+              0
+            </span>
+
+            <small>Mbps</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+      <!-- PING -->
+      <div class="summary-card">
+
+        <div class="summary-icon blue">
+
+          <i class="fa-solid fa-tower-broadcast"></i>
+
+        </div>
+
+        <div>
+
+          <p>Rata-rata Ping</p>
+
+          <h2>
+
+            <span id="avgPing">
+              0
+            </span>
+
+            <small>ms</small>
+
+          </h2>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-box">
+
+      <div class="table-header">
+
+        <h3>Riwayat Pengujian</h3>
+
+      </div>
+
+      <div class="table-responsive">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>Tanggal</th>
+              <th>Server</th>
+              <th>Download</th>
+              <th>Upload</th>
+              <th>Ping</th>
+              <th>Perangkat</th>
+              <th>Status</th>
+
+            </tr>
+
+          </thead>
+
+          <tbody id="historyTable">
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="history.js"></script>
+
+</body>
+</html>
